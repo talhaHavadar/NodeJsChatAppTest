@@ -1,0 +1,18 @@
+<div class="login-container" ng-controller="LoginController as ctrl">
+    <div class="login-title">
+        <h2>LOGIN</h2>
+    </div>
+    <div class="form-container">
+        <form class="form" name="form" method="post" ng-submit="ctrl.login()">
+            <span style="display:block" class="alert" ng-show="ctrl.error">{{ ctrl.error }}</span>
+            <span style="display:block" ng-show="form.username.$touched && form.username.$error.required" class="alert">* Username required</span>
+            <span style="display:block" ng-show="form.password.$touched && form.password.$error.required" class="alert">* Password required</span>
+            
+            <input type="text" class="form-control form-block" name="username" ng-model="ctrl.loginData.username" ng-class="{'alert':form.username.$touched && form.username.$error.required, 'valid': form.username.$touched && form.username.$valid}" placeholder="USERNAME" required>
+            <input type="password" name="password" class="form-control form-block" ng-model="ctrl.loginData.password" ng-class="{'alert':form.password.$touched && form.password.$error.required, 'valid': form.password.$touched && form.password.$valid}" placeholder="PASSWORD" required>
+            
+            <input type="submit" class="btn btn-login btn-block" value="Login">
+            
+        </form>
+    </div>
+</div>

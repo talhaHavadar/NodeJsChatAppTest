@@ -1,0 +1,22 @@
+<div class="login-container" ng-controller="SignupController as ctrl">
+    <div class="login-title">
+        <h2>SIGN UP</h2>
+    </div>
+    <div class="form-container">
+        <form class="form" name="form" method="post" ng-submit="ctrl.signup()">
+            <span style="display:block" class="alert" ng-show="ctrl.error">{{ ctrl.error }}</span>
+            <span style="display:block" ng-show="form.name.$touched && form.name.$error.required" class="alert">* Name required</span>
+            <span style="display:block" ng-show="form.chat_name.$touched && form.chat_name.$error.required" class="alert">* Chat Name required</span>
+            <span style="display:block" ng-show="form.username.$touched && form.username.$error.required" class="alert">* Username required</span>
+            <span style="display:block" ng-show="form.password.$touched && form.password.$error.required" class="alert">* Password required</span>
+            
+            <input type="text" class="form-control form-block" name="name" ng-model="ctrl.userData.name" ng-class="{'alert':form.name.$touched && form.name.$error.required, 'valid': form.name.$touched && form.name.$valid}" placeholder="NAME" required>
+            <input type="text" class="form-control form-block" name="chat_name" ng-model="ctrl.userData.chat_name" ng-class="{'alert':form.chat_name.$touched && form.chat_name.$error.required, 'valid': form.chat_name.$touched && form.chat_name.$valid}" placeholder="CHAT NAME" required>
+            <input type="text" class="form-control form-block" name="username" ng-model="ctrl.userData.username" ng-class="{'alert':form.username.$touched && form.username.$error.required, 'valid': form.username.$touched && form.username.$valid}" placeholder="USERNAME" required>
+            <input type="password" name="password" class="form-control form-block" ng-model="ctrl.userData.password" ng-class="{'alert':form.password.$touched && form.password.$error.required, 'valid': form.password.$touched && form.password.$valid}" placeholder="PASSWORD" required>
+            
+            <input type="submit" class="btn btn-signup btn-block" value="Signup">
+            
+        </form>
+    </div>
+</div>

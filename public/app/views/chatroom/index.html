@@ -1,0 +1,24 @@
+<script>
+    
+</script>
+<div class="chat-box" ng-controller="ChatController">
+	<div id="user-list">
+	    <div class="user" ng-repeat="user in users">
+	        <span class="chatname">{{ user.chat_name }}</span> <span class="username">({{ user.username }})</span>
+	    </div>
+	</div>
+	<div class="message-container">    
+	    <div class="messages" scroll-to-bottom = "messages">
+	        <div id="status" ng-class="{'connected': isConnected, 'connecting': !isConnected}">{{ status }}</div>
+	        <div class="message" ng-repeat = "message in messages">
+	            <span class="nick">{{ message.chat_name }}</span>: <span class="text">{{ message.message }}</span>
+	        </div>
+	    </div>
+	    <div class="chat-form-container">
+	       <form class="chat-form" ng-submit="sendMessage()">
+	            <input type="text" class="form-control" ng-model="message" placeholder="Write your message..">
+	            <input type="submit" class="btn btn-chat" value="SEND">
+	       </form>
+	    </div>
+	</div>
+</div>

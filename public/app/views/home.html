@@ -1,0 +1,28 @@
+<div class="container" ng-controller="MainController as main">
+    <div class="title">
+        <h1>Hello This is Chat App!</h1>
+    </div>
+    <div class="info-container">
+        <div class="row-1">
+            <div style="text-align:center" ng-show="!main.loggedin">
+                <h4>Hi guys in this app I want to test myself on node.js and socket.io.</h4>
+                <p>If you want to test this app you need an account so signup!</p>
+            </div>
+            <div style="text-align:center" ng-show="main.loggedin">
+                <h4>Hi, {{ main.userInfo.name }}. We were waiting for you.</h4>
+                <p>You can message with your friend with '{{ main.userInfo.chat_name }}' nickname in our chatroom.</p>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="button-container">
+                <a ng-show="!main.loggedin" class="btn btn-login" href="/login" >Login</a>
+                <a ng-show="!main.loggedin" class="btn btn-signup" href="/signup">Signup</a>
+                <a ng-show="main.loggedin" href="/chat" class="btn btn-chat">Go to Chat</a>
+                <a ng-show="main.loggedin" href="/" class="btn btn-signup" ng-click="main.logout()">Logout</a>
+            </div>
+            <div class="git">
+                <p>Project @GitHub by Talha Can Havadar</p>
+            </div>
+        </div>
+    </div>
+</div>

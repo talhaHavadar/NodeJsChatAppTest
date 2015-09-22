@@ -1,0 +1,30 @@
+<DOCTYPE html>
+<html ng-app="testApp">
+    <head>
+        <base href="/">
+        <title>Chat App Test</title>
+        
+        <link rel="stylesheet" href="app/css/style.css" />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.6/angular-route.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="app/js/app.js"></script>
+        <script src="app/js/app.routes.js"></script>
+        
+        <!-- Services -->
+        <script src="app/js/services/authService.js"></script>
+        <script src="app/js/services/signService.js"></script>
+        
+        <!-- Controllers -->
+        <script src="app/js/controllers/mainCtrl.js"></script>
+        <script src="app/js/controllers/chatCtrl.js"></script>
+        <script src="app/js/controllers/loginCtrl.js"></script>
+        <script src="app/js/controllers/signCtrl.js"></script>
+        
+        
+    </head>
+    <body>
+        <div ng-view></div>
+    </body>
+</html>
